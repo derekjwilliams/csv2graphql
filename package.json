@@ -4,7 +4,9 @@
   "description": "CSV inputs to Graphql create mutations",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint lib/**",
+    "test": "jest tests",
+    "start": "babel-node lib/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,16 @@
   "bugs": {
     "url": "https://github.com/derekjwilliams/phirise/issues"
   },
-  "homepage": "https://github.com/derekjwilliams/phirise#readme"
+  "homepage": "https://github.com/derekjwilliams/phirise#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {}
 }
