@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint lib/**",
     "test": "jest tests",
-    "start": "babel-node lib/index.js"
+    "start": "babel-node $npm_package_main"
   },
   "repository": {
     "type": "git",
