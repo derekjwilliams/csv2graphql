@@ -16,7 +16,7 @@ describe('Load Schema From URL', () => {
     })
       .then(result => result.json())
       .then((result) => {
-        fs.writeFileSync('result.json', JSON.stringify(result.data, null, 2))
+        //fs.writeFileSync('result.json', JSON.stringify(result.data, null, 2))
       })
   })
 })

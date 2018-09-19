@@ -1,9 +1,8 @@
 import { TransformTemplate, Transformation } from '../lib/transformTemplate'
 import { Transformer } from '../lib/transformer'
 import { indentityTransform, ymdToISODateTransform, unusualDateTransform } from '../utility/transforms'
-import { nabatTypeQueries } from '../utility/nabatSchemaQueries'
+import { surveyTypeQuery } from '../utility/nabatSchemaQueries'
 
-console.log(nabatTypeQueries)
 test('simple create from object', () => {
   const testInput = 'a,b,c\n1,2,3'
   const transformer = Transformer.fromSpecification({ b: 3 })
@@ -23,7 +22,7 @@ describe('Constructors', () => {
     expect(actual).toEqual(undefined)
   })
   test('Transformation construction', () => {
-    const transform = new Transformation({ sourceKey: 'a', targetKey: 'agql', type: 'date', format: ymdToISODateTransform })
+    const transform = new Transformation({ sourceKey: 'a', targetKey: 'agql', type: 'date', transform: ymdToISODateTransform })
     expect(JSON.stringify(transform)).toBe(JSON.stringify({ sourceKey: 'a', targetKey: 'agql', type: 'date' }))
   })
 })
@@ -46,31 +45,26 @@ describe('Add Transformations', () => {
 })
 
 
-// test('Transformation indentityTransform', () => {
-//   let input = {}
-//   let actual = new Transformation({ format: indentityTransform })
-//   actual.transform()
-//   // expect(actual).toBe(`aa`)
-// })
+describe('Add Transformations', () => {
+  test('Transformation combine year month day', () => {
+    const input = { year: 2018, month: 1, day: 2 }
+    const actual = new Transformation({ transform: ymdToISODateTransform }).runTransformation(input)
+    expect(actual).toBe(`${input.year}-${input.month}-${input.day}`)
+  })
 
-test('Transformation combine year month day', () => {
-  const input = { year: 2018, month: 1, day: 2 }
-  const actual = new Transformation({ format: ymdToISODateTransform }).format(input)
-  expect(actual).toBe(`${input.year}-${input.month}-${input.day}`)
-})
+  test('Transformation colony count date string', () => {
+    const input = '7-jun-18'
+    const actual = new Transformation({ transform: unusualDateTransform }).runTransformation(input)
+    expect(actual.toISOString()).toBe('2018-06-07T06:00:00.000Z')
+  })
 
-test('Transformation colony count date string', () => {
-  const input = '7-jun-18'
-  const actual = new Transformation({ format: unusualDateTransform }).format(input)
-  expect(actual.toISOString()).toBe('2018-06-07T06:00:00.000Z')
-})
-
-test('Transformation date expression, first day of next month', () => {
-  const thisMonth = new Date().getMonth()
-  const nextMonth = thisMonth !== 11 ? thisMonth + 1 : 0
-  const nextMonthsYear = thisMonth !== 11 ? new Date().getFullYear() : new Date().getFullYear() + 1
-  const input = 'first day of next month'
-  const expected = new Date(nextMonthsYear, nextMonth, 1).toISOString()
-  const actual = new Transformation({ format: unusualDateTransform }).format(input)
-  expect(actual.toISOString()).toEqual(expected)
+  test('Transformation date expression, first day of next month', () => {
+    const thisMonth = new Date().getMonth()
+    const nextMonth = thisMonth !== 11 ? thisMonth + 1 : 0
+    const nextMonthsYear = thisMonth !== 11 ? new Date().getFullYear() : new Date().getFullYear() + 1
+    const input = 'first day of next month'
+    const expected = new Date(nextMonthsYear, nextMonth, 1).toISOString()
+    const actual = new Transformation({ transform: unusualDateTransform }).runTransformation(input)
+    expect(actual.toISOString()).toEqual(expected)
+  })
 })

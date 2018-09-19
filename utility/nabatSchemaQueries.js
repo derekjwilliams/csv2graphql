@@ -35,7 +35,7 @@ const nabatTypes =  [
                      'StationaryAcousticImageInput',
                      'SurveyInput',
 ]
-const typeBody = stripIndent
+const typeBody =
 `{
   name
   description
@@ -54,9 +54,10 @@ const typeBody = stripIndent
     }
   }
 }`
-
-export const nabatTypeQueries = nabatTypes.map(t =>  {
-  let result = {}
-  result[t] = `{__type (name: "${t}") ${typeBody} }`
-  return result
-})
+let objv = {}
+export const nabatTypeQueries = nabatTypes.reduce((acc, val) =>  {
+  let result = `{__type (name: "${val}") ${typeBody} }`
+  acc[val] = result;
+  return acc
+}, {})
+// export const nabatTypeQueries = queries
