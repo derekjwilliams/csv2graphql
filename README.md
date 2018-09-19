@@ -52,6 +52,84 @@ Example Queries:
    }
 }}
 ```
+
+### Getting A  List Mutations with Input Names with types, and Return Types
+
+```{
+  __type(name: "Mutation") {
+    fields {
+      name
+      description
+      type {
+        kind
+        name
+      }
+      args {
+        name
+        type {
+          ofType {
+            kind
+            name
+            inputFields {
+              name
+              description
+              type {
+                ofType {
+                  name
+                  description
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+### A Single Element in the Result From the Above Introspection
+
+```{
+  "name": "createSite",
+  "description": "Creates a single `Site`.",
+  "type": {
+    "kind": "OBJECT",
+    "name": "CreateSitePayload"
+  },
+  "args": [
+    {
+      "name": "input",
+      "type": {
+        "ofType": {
+          "kind": "INPUT_OBJECT",
+          "name": "CreateSiteInput",
+          "inputFields": [
+            {
+              "name": "clientMutationId",
+              "description": "An arbitrary string value with no semantic meaning. Will be included in the payload verbatim. May be used to track mutations by the client.",
+              "type": {
+                "ofType": null
+              }
+            },
+            {
+              "name": "site",
+              "description": "The `Site` to be created by this mutation.",
+              "type": {
+                "ofType": {
+                  "name": "SiteInput",
+                  "description": "An input for mutations affecting `Site`"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
 ## Creating and Updating Values
 
 ### Create Value
