@@ -5,7 +5,7 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-export { introspectionQuery } from 'graphql';
+export { introspectionQuery } from 'graphql'
 
 
 // Some GraphQL services do not support subscriptions and fail an introspection

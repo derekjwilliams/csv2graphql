@@ -3,6 +3,7 @@ import { Transformer } from '../lib/transformer'
 import { indentityTransform, ymdToISODateTransform, unusualDateTransform } from '../utility/transforms'
 import { nabatTypeQueries } from '../utility/nabatSchemaQueries'
 
+console.log(nabatTypeQueries)
 test('simple create from object', () => {
   const testInput = 'a,b,c\n1,2,3'
   const transformer = Transformer.fromSpecification({ b: 3 })

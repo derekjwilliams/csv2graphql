@@ -35,7 +35,9 @@
     "jest": "^23.6.0"
   },
   "dependencies": {
+    "common-tags": "^1.8.0",
     "graphql": "^14.0.2",
+    "graphql-tag": "^2.9.2",
     "moment": "^2.22.2",
     "moment-parseplus": "^1.1.1",
     "node-fetch": "^2.2.0"

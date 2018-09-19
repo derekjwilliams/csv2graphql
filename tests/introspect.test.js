@@ -31,11 +31,9 @@ describe('GQL Library Sanity Test', () => {
   `)
 
     // The root provides a resolver function for each API endpoint
-    const root = {
-      k: () => 'simpleValue'
-    }
+    const root = { k: () => 'simpleValue' }
 
-    // Run the GraphQL query '{ hello }' and print out the response
+    // Run the GraphQL query '{ k }' and print out the response
     return graphql(schema, '{ k }', root).then((response) => {
       expect(response.data).toEqual({ k: 'simpleValue' })
     })
