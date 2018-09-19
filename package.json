@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint lib/**",
     "test": "jest tests",
+    "watchTests": "jest --watchAll",
     "start": "babel-node $npm_package_main"
   },
   "repository": {
@@ -26,11 +27,17 @@
     "@babel/core": "^7.1.0",
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.22.0",
     "jest": "^23.6.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "graphql": "^14.0.2",
+    "moment": "^2.22.2",
+    "moment-parseplus": "^1.1.1",
+    "node-fetch": "^2.2.0"
+  }
 }
