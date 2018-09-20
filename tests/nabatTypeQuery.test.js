@@ -13,7 +13,7 @@ describe('Load List of Mutations', () => {
     })
       .then(result => result.json())
       .then((result) => {
-        console.log(JSON.stringify(result.data, null, 2))
+        // console.log(JSON.stringify(result.data, null, 2))
       })
   })
 })

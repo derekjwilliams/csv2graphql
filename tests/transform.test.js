@@ -40,6 +40,7 @@ describe('Add Transformations', () => {
     const expected = '[{"sourceKey":"csv_column","targetKey":"gcq_key"},{"sourceKey":"csv_column","targetKey":"gcq_key"}]'
     actual.addTransform(new Transformation())
     actual.addTransform(new Transformation())
+    console.log(JSON.stringify(expected, null, 2))
     expect(JSON.stringify(actual.columnTransforms)).toEqual(expected)
   })
 })

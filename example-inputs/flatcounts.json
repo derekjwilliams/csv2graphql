@@ -1,0 +1,26 @@
+[
+        {
+          "recordingTime": "2018-06-21T01:01:00+00:00",
+          "softwareId": 4,
+          "speciesId": 5,
+          "manualId": null,
+          "wavFileName": null,
+          "saSurveyId": 1
+        },
+        {
+          "recordingTime": "2018-06-28T21:22:00+00:00",
+          "softwareId": 2,
+          "speciesId": 32,
+          "manualId": null,
+          "wavFileName": "Q2NW_20170628_213208.wav",
+          "saSurveyId": 1
+        },
+        {
+          "recordingTime": "2018-06-21T02:02:00+00:00",
+          "softwareId": 3,
+          "speciesId": 6,
+          "manualId": null,
+          "wavFileName": "ac.wav",
+          "saSurveyId": 1
+        }
+]

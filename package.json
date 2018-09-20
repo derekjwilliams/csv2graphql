@@ -41,8 +41,10 @@
     "common-tags": "^1.8.0",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.9.2",
+    "json2csv": "^4.2.1",
     "moment": "^2.22.2",
     "moment-parseplus": "^1.1.1",
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.2.0",
+    "papaparse": "^4.6.0"
   }
 }
