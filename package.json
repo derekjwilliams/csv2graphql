@@ -3,7 +3,7 @@
   "jest": {
     "verbose": true
   },
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "CSV inputs to Graphql create mutations",
   "main": "lib/index.js",
   "scripts": {

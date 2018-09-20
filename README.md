@@ -2,7 +2,7 @@
 
 ## Description
 
-Convert related CSV set of mutations that can be used to send data to a Graphql service.  The inverse, reading from Graphql service to set of CSV outputs is a future goal.  No user interface provided, see related projects for React 16+ and Angular 6+ user interface components.  Simple examples are provided in Apollo Client for React and Angular.
+Convert a related set of CSV inputs to GraphQL mutations and Query Variables that can be used to send data to a GraphQL service.  The inverse, reading from graphQL service to set of CSV outputs is a future goal.  No user interface provided, see related projects for React 16+ and Angular 6+ user interface components.  Simple examples are provided in a separate repository for React and Angular using Apollo Client.
 
 ## Map Specification - Transform Template
 
