@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "philocal": {
+      "schemaPath": "schema.graphql"
+    }
+  }
+}

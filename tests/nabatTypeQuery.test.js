@@ -2,10 +2,10 @@ import fetch from 'node-fetch'
 import { nabatTypeQueries } from '../utility/nabatSchemaQueries'
 import { mutationsListingQuery } from '../utility/mutationsListingQuery'
 
-const defaultTestURL = 'http://localhost:5000/graphql'
+const defaultTestURL = 'https://api.sciencebase.gov/nabatmonitoring-survey/graphql'//'http://localhost:5000/graphql'
 
 describe('Load List of Mutations', () => {
-  test('load all schemas', () => {
+  test('load all mutations', () => {
     fetch(defaultTestURL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

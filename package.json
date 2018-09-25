@@ -8,8 +8,8 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint lib/**",
-    "test": "jest tests",
-    "watchTests": "jest --watchAll",
+    "test": "TERM=dumb jest tests",
+    "watchTests": "TERM=dumb jest --watchAll",
     "start": "babel-node $npm_package_main"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -38,13 +39,18 @@
     "jest": "^23.6.0"
   },
   "dependencies": {
+    "apollo-boost": "^0.1.16",
     "common-tags": "^1.8.0",
+    "cross-fetch": "^2.2.2",
+    "eslint-plugin-graphql": "^2.1.1",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.9.2",
     "json2csv": "^4.2.1",
     "moment": "^2.22.2",
     "moment-parseplus": "^1.1.1",
     "node-fetch": "^2.2.0",
-    "papaparse": "^4.6.0"
+    "papaparse": "^4.6.0",
+    "postgraphile": "^4.0.0-rc.5.1",
+    "postgraphile-plugin-connection-filter": "^1.0.0-beta.15"
   }
 }
