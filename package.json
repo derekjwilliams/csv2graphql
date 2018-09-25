@@ -5,10 +5,10 @@
   },
   "version": "0.5.2",
   "description": "CSV inputs to Graphql create mutations",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "lint": "eslint lib/**",
-    "test": "TERM=dumb jest tests",
+    "lint": "eslint src/**",
+    "test": "TERM=dumb jest test",
     "watchTests": "TERM=dumb jest --watchAll",
     "start": "babel-node $npm_package_main"
   },
