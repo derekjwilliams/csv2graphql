@@ -11,6 +11,6 @@ test_async:
   stage: test
   script:
    - npm install
-   - npm run test -- -t 'gql tag - simple'
+   - npm run test -- -t 'Parsing CSV'
   tags:
     - docker
