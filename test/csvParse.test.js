@@ -54,6 +54,6 @@ describe('Parsing CSV', () => {
     const expected = '[{"A":"AValue1","B":"2018-06-11T06:00:00.000Z"},{"A":"AValue2","B":"2018-06-11T06:00:00.000Z"}]'
     expect(parsed.data[0].B instanceof Date).toBeTruthy()
     expect(parsed.data[1].B instanceof Date).toBeTruthy()
-    expect(JSON.stringify(parsed.data)).toBe(expected)
+    expect(JSON.stringify(parsed.data)).toEqual(expected)
   })
 })
